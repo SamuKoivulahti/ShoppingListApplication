@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.151" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ohjelmointi.GUI">
+   <top>
+      <VBox prefHeight="26.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+         <children>
+            <MenuBar prefHeight="24.0" prefWidth="600.0">
+              <menus>
+                <Menu mnemonicParsing="false" text="File">
+                  <items>
+                        <MenuItem mnemonicParsing="false" onAction="#onSaveAction" text="Save" />
+                        <MenuItem mnemonicParsing="false" onAction="#onSaveAsAction" text="Save As" />
+                        <MenuItem mnemonicParsing="false" onAction="#onLoadFileAction" text="Load File" />
+                        <SeparatorMenuItem mnemonicParsing="false" />
+                        <MenuItem mnemonicParsing="false" onAction="#onUploadToDropboxAction" text="Upload to Dropbox" />
+                        <MenuItem mnemonicParsing="false" onAction="#onSaveToDatabaseAction" text="Save to Database" />
+                        <MenuItem mnemonicParsing="false" onAction="#onLoadFromDatabaseAction" text="Load from Database" />
+                        <SeparatorMenuItem mnemonicParsing="false" />
+                    <MenuItem mnemonicParsing="false" onAction="#onCloseAction" text="Close" />
+                  </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Edit">
+                  <items>
+                        <MenuItem mnemonicParsing="false" onAction="#onNewAction" text="New Item" />
+                    <MenuItem mnemonicParsing="false" onAction="#onDeleteAction" text="Delete Item" />
+                  </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Help">
+                  <items>
+                    <MenuItem mnemonicParsing="false" onAction="#onAboutAction" text="About" />
+                  </items>
+                </Menu>
+              </menus>
+            </MenuBar>
+         </children>
+      </VBox>
+   </top>
+   <center>
+      <TableView fx:id="tableView" prefHeight="200.0" BorderPane.alignment="CENTER">
+        <columns>
+          <TableColumn fx:id="item" onEditCommit="#onEditCommitAction" prefWidth="300.0" resizable="false" text="Item" />
+          <TableColumn fx:id="amount" maxWidth="100.0" minWidth="100.0" onEditCommit="#onEditCommitAction" prefWidth="100.0" resizable="false" text="Amount" />
+        </columns>
+      </TableView>
+   </center>
+   <bottom>
+      <HBox alignment="CENTER" prefHeight="41.0" prefWidth="600.0" spacing="50.0" BorderPane.alignment="CENTER">
+         <children>
+            <Button mnemonicParsing="false" onAction="#onCreateItemAction" text="New Item" />
+            <Button mnemonicParsing="false" onAction="#onDeleteItemAction" text="Delete Item" />
+            <Button mnemonicParsing="false" onAction="#onEditItemAction" text="Edit Item" />
+         </children>
+      </HBox>
+   </bottom>
+</BorderPane>

@@ -1,0 +1,35 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <parent>
+        <groupId>ohjelmointi</groupId>
+        <artifactId>shopping-list-application</artifactId>
+        <version>1</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>ohjelmointi.json</groupId>
+    <artifactId>json-parser</artifactId>
+    <name>JSON Parser Library</name>
+    <packaging>jar</packaging>
+    <dependencies>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-api</artifactId>
+            <version>5.3.1</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+    <build>
+        <finalName>${project.artifactId}</finalName>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>3.0.2</version>
+                <configuration>
+                    <outputDirectory>${binaries}</outputDirectory>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>

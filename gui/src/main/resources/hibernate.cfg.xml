@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+          "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+          "http://hibernate.org/dtd/hibernate-mapping.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <property name="hbm2ddl.auto">update</property>
+        <property name="dialect">org.hibernate.dialect.H2Dialect</property>
+        <property name="connection.driver_class">org.h2.Driver</property>
+        <property name="connection.url">jdbc:h2:./list</property>
+        <mapping class="ohjelmointi.Item"/>
+    </session-factory>
+</hibernate-configuration>
